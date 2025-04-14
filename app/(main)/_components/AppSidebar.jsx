@@ -11,7 +11,7 @@ import {
      SidebarMenuButton,
      SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { SideBarOptions } from "@/services/Constansts";
+import { SideBarOptions } from "@/services/Constants";
 import { Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
