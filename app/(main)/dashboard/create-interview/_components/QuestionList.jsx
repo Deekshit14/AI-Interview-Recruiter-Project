@@ -8,7 +8,7 @@ import { supabase } from '@/services/supabaseClient';
 import { useUser } from '@/app/provider';
 import { v4 as uuidv4 } from 'uuid';
 
-function QuestionList({ formData }) {
+function QuestionList({ formData, onCreateLink }) {
 
      const [loading, setLoading] = useState(true);
      const [questionList, setQuestionList] = useState();
@@ -62,6 +62,8 @@ function QuestionList({ formData }) {
                .select()
                setSaveLoading(false);
 
+               onCreateLink(interview_id);
+
      }
 
      return (
@@ -86,7 +88,7 @@ function QuestionList({ formData }) {
                <div className='flex justify-end mt-10'>
                     <Button onClick={() => onFinish()} disabled = {saveLoading}>
                          {saveLoading && <Loader2 className='animate-spin' />}
-                         Finish
+                         Create Interview Link & Finish
                     </Button>
                </div>
           </div>

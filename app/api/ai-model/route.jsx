@@ -19,7 +19,7 @@ export async function POST(req) {
           })
 
           const completion = await openai.chat.completions.create({
-               model: "mistralai/mixtral-8x7b-instruct:free",
+               model: "agentica-org/deepcoder-14b-preview:free",      // Keep changing the model, because of api crash
                messages: [
                     { role: "user", content: FINAL_PROMPT }
                ],
@@ -34,4 +34,5 @@ export async function POST(req) {
 }
 
 // mistralai/mixtral-8x7b-instruct:free
+// agentica-org/deepcoder-14b-preview:free
 // meta-llama/llama-3-8b-instruct:free
