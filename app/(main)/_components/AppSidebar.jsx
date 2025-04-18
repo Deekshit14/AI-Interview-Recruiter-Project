@@ -28,7 +28,10 @@ export function AppSidebar() {
                     <Image src = {'/logo.jpg'} alt = "logo" width = {200} height = {100} 
                          className="w-[150px]"
                     />
-                    <Button className = "w-full mt-5"> <Plus /> Create New Interview </Button>
+                    {/* <Button className = "w-full mt-5"> <Plus /> Create New Interview </Button> */}
+                    <Link href={'/dashboard/create-interview'} className = "w-full mt-5">
+                         <Button className = "w-full mt-5"> <Plus /> Create New Interview </Button>
+                    </Link>
                </SidebarHeader>
                <SidebarContent>
                     <SidebarGroup>
