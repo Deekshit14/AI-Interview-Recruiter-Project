@@ -1,16 +1,17 @@
-"use client"; // If we are using hooks, we need to 'use client' component
-import { useUser } from '@/app/provider';
-import { Button } from '@/components/ui/button';
-import { supabase } from '@/services/supabaseClient';
-import { Video } from 'lucide-react';
-import Link from 'next/link';
-import React, { useEffect, useState } from 'react'
-import InterviewCard from './InterviewCard';
+"use client";  // If we are using hooks, we need to 'use client' component
+import { useUser } from "@/app/provider";
+import { supabase } from "@/services/supabaseClient";
+import { useEffect, useState } from "react";
+import InterviewCard from "../dashboard/_components/InterviewCard";
+import { Video } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
-function LatestInterviewsList() {
+ 
 
+function AllInterview() {
      const [interviewList, setInterviewList] = useState([]);
-     const {user} = useUser();
+     const { user } = useUser();
 
      useEffect(() => {
           user && GetInterviewList();
@@ -21,8 +22,7 @@ function LatestInterviewsList() {
                .from('Interviews')
                .select('*')
                .eq('userEmail', user?.email)
-               .order('id', {ascending: false})
-               .limit(6);
+               .order('id', { ascending: false });
 
           console.log(Interviews);
           setInterviewList(Interviews);
@@ -31,7 +31,7 @@ function LatestInterviewsList() {
 
      return (
           <div className="my-5">
-               <h2 className='font-bold text-2xl'>Previously Created Interviews</h2>
+               <h2 className='font-bold text-2xl'>All Previously Created Interviews</h2>
 
                {
                     interviewList?.length === 0
@@ -47,11 +47,11 @@ function LatestInterviewsList() {
                }
 
                {
-                    interviewList 
+                    interviewList
                     &&
                     <div className='grid grid-cols-1 sm:grid-cols-2 mt-5 md:grid-cols-2 xl:grid-cols-3 gap-5'>
                          {interviewList.map((interview, index) => (
-                              <InterviewCard interview = {interview} key = {index} />
+                              <InterviewCard interview={interview} key={index} />
                          ))}
                     </div>
                }
@@ -60,4 +60,4 @@ function LatestInterviewsList() {
      )
 }
 
-export default LatestInterviewsList
+export default AllInterview
