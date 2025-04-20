@@ -1,12 +1,14 @@
+import { useUser } from '@/app/provider';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input'
-import { ArrowLeft, Calendar, Clock, Copy, List, Mail, Plus } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Copy, List, Mail, MessageCircle, Plus } from 'lucide-react';
 import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react'
 import { toast } from 'sonner';
 
 function InterviewLink({ interview_id, formData }) {
+
      const url = process.env.NEXT_PUBLIC_HOST_URL + '/' + interview_id;
 
      const GetInterviewUrl = () => {
@@ -14,10 +16,32 @@ function InterviewLink({ interview_id, formData }) {
      }
 
 
+     const {user} = useUser();
      const onCopyLink = async () => {
           await navigator.clipboard.writeText(url);
           toast('Link copied')
      }
+
+     const onSend = () => {
+          // window.location.href = `mailto:${interview?.userEmail}?subject=Interview Link&body=${url}`;
+          const to = user?.email;
+          const s = formData?.jobPosition
+          const subject = encodeURIComponent(`Interview Link on ${s}`);
+          const body = encodeURIComponent(`Hi,\n\nHere is your interview link:\n${url}`);
+
+          const gmailUrl = `https://mail.google.com/mail/?view=cm&to=${to}&su=${subject}&body=${body}`;
+          window.open(gmailUrl, '_blank'); // Opens in a new tab
+     }
+
+
+     const onWhatsapp = () => {
+          const s = formData?.jobPosition;
+          const message = `Hi,\n\nHere is your interview link for the position of ${s}:\n${url}`;
+          const encodedMessage = encodeURIComponent(message);
+          const whatsappUrl = `https://wa.me/?text=${encodedMessage}`;
+          window.open(whatsappUrl, '_blank'); // Opens WhatsApp in a new tab
+     };
+      
 
 
      return (
@@ -54,10 +78,10 @@ function InterviewLink({ interview_id, formData }) {
 
                <div className='mt-7 bg-white p-5 rounded-lg w-full'>
                     <h2 className='font-bold'>Share Via</h2>
-                    <div className='flex gap-7 mt-2 justify-around'>
-                         <Button variant={'outline'} className=''> <Mail /> Email</Button>
-                         <Button variant={'outline'} className=''> <Mail /> Slack</Button>
-                         <Button variant={'outline'} className=''> <Mail /> Whatsapp</Button>
+                    <div className='flex gap-7 mt-2'>
+                         <Button variant={'outline'} className='' onClick={onSend}> <Mail /> Email</Button>
+                         {/* <Button variant={'outline'} className=''> <Mail /> Slack</Button> */}
+                         <Button variant={'outline'} className='' onClick = {onWhatsapp}> <MessageCircle /> Whatsapp</Button>
                     </div>
                </div>
 

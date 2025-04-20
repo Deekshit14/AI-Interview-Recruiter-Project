@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Copy, Send } from 'lucide-react'
 import moment from 'moment'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { toast } from 'sonner'
@@ -30,10 +31,14 @@ function InterviewCard({ interview, viewDetail = false }) {
 
           <div className='p-5 bg-white rounded-lg border'>
                <div className='flex items-center justify-between'>
-                    <div className='h-[40px] w-[40px] bg-primary rounded-full'></div>
+                    {/* <div className='h-[40px] w-[40px] bg-green-500 rounded-full'> */}
+                         <div>
+                         <Image src = {'/logo2.png'} alt = "logo" width = {40} height = {40} />
+                         </div>
+                    {/* </div> */}
                     <h2 className='text-sm'>{moment(interview?.created_at).format('DD MMM yyy')}</h2>
                </div>
-               <h2 className='mt-3 font-bold text-lg'>{interview?.jobPosition}</h2>
+               <h2 className='mt-3 capitalize font-bold text-lg'>{interview?.jobPosition}</h2>
                <h2 className='mt-2 flex justify-between text-gray-500'>
                     {interview?.duration}
                     <span className='text-green-700'>{interview['interview-feedback']?.length} Candidates</span>
