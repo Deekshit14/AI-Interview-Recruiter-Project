@@ -12,11 +12,11 @@ function InterviewDetailContainer({ interviewDetail }) {
                          <h2 className='text-sm text-gray-500'>Duration</h2>
                          <h2 className='flex text-md font-bold items-center gap-2'><Clock className='h-4 w-4' /> {interviewDetail?.duration}</h2>
                     </div>
-                    <div>
+                    <div className='sm:bg-blue-100 sm:p-2 sm:rounded-lg'>
                          <h2 className='text-sm text-gray-500'>Created on</h2>
                          <h2 className='flex text-md font-bold items-center gap-2'><Calendar className='h-4 w-4' /> {moment(interviewDetail?.created_at).format('MMM DD, yyyy')}</h2>
                     </div>
-                    {
+                    {/* {
                          interviewDetail?.type &&
                          <div>
                               <h2 className='text-sm text-gray-500'>Type</h2>
@@ -24,7 +24,7 @@ function InterviewDetailContainer({ interviewDetail }) {
                                    {JSON.parse(interviewDetail?.type)[0]}
                               </h2>
                          </div>
-                    }
+                    } */}
                </div>
                <div className='mt-5'>
                     <h2 className='font-bold'>Job Description</h2>
@@ -33,7 +33,7 @@ function InterviewDetailContainer({ interviewDetail }) {
 
                <div className='mt-5'>
                     <h2 className='font-bold'>Interview Questions</h2>
-                    <div className='grid grid-cols-2 gap-3 mt-3'>
+                    <div className='grid sm:grid-cols-2 gap-3 mt-3'>
                          {interviewDetail?.questionList.map((item, index) => (
                               <h2 className='text-sm' key={index}>{index + 1}. {item?.question}</h2>
                          ))}

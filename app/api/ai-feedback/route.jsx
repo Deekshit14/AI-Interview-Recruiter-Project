@@ -3,8 +3,17 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 
 export async function POST(req) {
-     const conversation = await req.json();
-     const FINAL_PROMPT = FEEDBACK_PROMPT.replace('{{conversation}}', JSON.stringify(conversation));
+     // const conversation = await req.json();
+     const { conversation, questionList, jobPosition, jobDescription } = await req.json();
+     // const formattedQuestions = questionList?.map((item, index) => `${index + 1}. ${item.question}`).join('\n');
+     console.log('QuestionList is ', questionList);
+
+     const FINAL_PROMPT = FEEDBACK_PROMPT
+          .replace('{{conversation}}', JSON.stringify(conversation))
+          .replace('{{questionList}}', questionList)
+          .replace('{{jobDescription}}', jobDescription)
+          .replace('{{jobPosition}}', jobPosition)
+
 
      try {
           const openai = new OpenAI({

@@ -32,22 +32,22 @@ function InterviewCard({ interview, viewDetail = false }) {
           <div className='p-5 bg-white rounded-lg border'>
                <div className='flex items-center justify-between'>
                     {/* <div className='h-[40px] w-[40px] bg-green-500 rounded-full'> */}
-                         <div>
-                         <Image src = {'/logo2.png'} alt = "logo" width = {40} height = {40} />
-                         </div>
+                    <div>
+                         <Image src={'/logo2.png'} alt="logo" width={40} height={40} />
+                    </div>
                     {/* </div> */}
                     <h2 className='text-sm'>{moment(interview?.created_at).format('DD MMM yyy')}</h2>
                </div>
-               <h2 className='mt-3 capitalize font-bold text-lg'>{interview?.jobPosition}</h2>
+               <h2 className='mt-3 capitalize font-bold text-md sm:text-lg'>{interview?.jobPosition}</h2>
                <h2 className='mt-2 flex justify-between text-gray-500'>
                     {interview?.duration}
                     <span className='text-green-700'>{interview['interview-feedback']?.length} Candidates</span>
                </h2>
 
-               { 
-                    !viewDetail 
-                    ?
-                         <div className='flex gap-3 w-full mt-5 min-w-0'>
+               {
+                    !viewDetail
+                         ?
+                         <div className='flex flex-col sm:flex-row gap-3 w-full mt-5 min-w-0'>
                               <Button
                                    variant='outline'
                                    className='flex-1 flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap text-ellipsis'
@@ -65,8 +65,8 @@ function InterviewCard({ interview, viewDetail = false }) {
                                    Send
                               </Button>
                          </div>
-                    :
-                         <Link href = { '/scheduled-interview/' + interview?.interview_id + '/details' }>
+                         :
+                         <Link href={'/scheduled-interview/' + interview?.interview_id + '/details'}>
                               <Button className="mt-5 w-full" variant="outline">View Details <ArrowRight /></Button>
                          </Link>
                }

@@ -16,7 +16,7 @@ function InterviewLink({ interview_id, formData }) {
      }
 
 
-     const {user} = useUser();
+     const { user } = useUser();
      const onCopyLink = async () => {
           await navigator.clipboard.writeText(url);
           toast('Link copied')
@@ -41,34 +41,38 @@ function InterviewLink({ interview_id, formData }) {
           const whatsappUrl = `https://wa.me/?text=${encodedMessage}`;
           window.open(whatsappUrl, '_blank'); // Opens WhatsApp in a new tab
      };
-      
+
 
 
      return (
           <div className='flex flex-col items-center justify-center mt-10'>
-               <Image src = {'/check.webp'} alt = 'check' width = {200} height = {200} 
+               <Image src={'/check.webp'} alt='check' width={200} height={200}
                     className='w-[50px] h-[50px]'
                />
-               <h2 className = "font-bold text-lg mt-4">Your AI Interview is Ready!</h2>
+               <h2 className="font-bold text-lg mt-4">Your AI Interview is Ready!</h2>
                <p className='mt-3'>Share this link with your candidates to start the interview process</p>
 
                <div className='w-full p-7 mt-6 rounded-lg bg-white'>
-                    <div className = "flex justify-between items-center">
+                    <div className="flex justify-between items-center">
                          <h2 className='font-bold'>Interview Link</h2>
-                         <h2 className='p-1 px-2 text-primary bg-blue-50 rounded-4xl'>Valid for 30 days</h2>
+                         <h2 className='p-1 px-2 text-xs sm:text-sm text-primary bg-blue-50 rounded-2xl'>Valid for 30 days</h2>
                     </div>
                     <div className='mt-3 flex gap-3 items-center'>
-                         <Input defaultValue = {GetInterviewUrl()} disabled = {true} />
-                         <Button onClick = {() => onCopyLink()}> <Copy /> Copy link </Button>
+                         <Input defaultValue={GetInterviewUrl()} disabled={true} />
+                         {/* <Button onClick = {() => onCopyLink()}> <Copy /> Copy link </Button> */}
+                         <Button onClick={() => onCopyLink()} className="flex items-center gap-2">
+                              <Copy className="w-4 h-4" />
+                              <span className="hidden sm:inline">Copy link</span>
+                         </Button>
                     </div>
                     <hr className='my-5' />
 
                     <div className='flex gap-5'>
                          <h2 className='text-sm text-gray-500 flex gap-2 items-center'>
-                              <Clock className='h-4 w-4' />{formData?.duration} 
+                              <Clock className='h-4 w-4' />{formData?.duration}
                          </h2>
                          <h2 className='text-sm text-gray-500 flex gap-2 items-center'>
-                              <List className='h-4 w-4' /> 10 Question 
+                              <List className='h-4 w-4' /> 10 Question
                          </h2>
                          {/* <h2 className='text-sm text-gray-500 flex gap-2 items-center'>
                               <Calendar className='h-4 w-4' />30Min{formData?.duration} 
@@ -80,18 +84,17 @@ function InterviewLink({ interview_id, formData }) {
                     <h2 className='font-bold'>Share Via</h2>
                     <div className='flex gap-7 mt-2'>
                          <Button variant={'outline'} className='' onClick={onSend}> <Mail /> Email</Button>
-                         {/* <Button variant={'outline'} className=''> <Mail /> Slack</Button> */}
-                         <Button variant={'outline'} className='' onClick = {onWhatsapp}> <MessageCircle /> Whatsapp</Button>
+                         <Button variant={'outline'} className='' onClick={onWhatsapp}> <MessageCircle /> Whatsapp</Button>
                     </div>
                </div>
 
-               <div className='flex w-full gap-5 justify-between mt-6'>
-                    <Link href = {'/dashboard'}>
-                         <Button variant={'outline'}> <ArrowLeft /> Back to Dashboard</Button>
+               <div className='flex w-full gap-5 mt-6'>
+                    <Link href={'/dashboard'}>
+                         <Button > <ArrowLeft /> Back to Dashboard</Button>
                     </Link>
-                    <Link href = {'/dashboard/create-interview'}>
+                    {/* <Link href = {'/dashboard/create-interview'}>
                          <Button> <Plus /> Create new Interview</Button>
-                    </Link>
+                    </Link> */}
                </div>
           </div>
      )

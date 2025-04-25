@@ -13,10 +13,10 @@ function CandidateList({ candidateList }) {
      }
 
      return (
-          <div className=''>
+          <div>
                <h2 className='font-bold my-5'>Candidates ({candidateList?.length})</h2>
                {candidateList?.map((candidate, index) => (
-                    <div key = {index} className='p-5 flex gap-3 items-center justify-between bg-white rounded-lg mt-2'>
+                    <div key = {index} className='p-5 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between  rounded-lg mt-2 bg-blue-200'>
                          <div className='flex items-center gap-5'>
                               <h2 className='bg-primary p-3 px-4.5 font-bold text-white text-transform: uppercase rounded-full'>{candidate.userName[0]}</h2>
                               <div>
