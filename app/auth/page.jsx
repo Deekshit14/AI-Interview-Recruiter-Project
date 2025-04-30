@@ -12,7 +12,10 @@ function Login() {
      */
      const signInWithGoogle = async () => {
           const {error} = await supabase.auth.signInWithOAuth({
-               provider: 'google'
+               provider: 'google',
+               options: {
+                    redirectTo: `${location.origin}/dashboard` // redirect to /dashboard after login
+               }
           })
 
           if (error) {
@@ -23,10 +26,10 @@ function Login() {
      return (
           <div className = 'flex flex-col items-center justify-center h-screen'>
                <div className = "flex flex-col items-center border rounded-2xl p-8">
-                    <Image src = {'/logo.jpg'} alt = 'logo' 
+                    <Image src = {'/logo4.svg'} alt = 'logo' 
                          width = {400} 
                          height={100}
-                         className='w-[180px]'
+                         className='w-[180px] mb-2'
                     />
                     <div className='flex flex-col items-center'>
                          <Image src = {'/login.jpg'} alt = 'login'

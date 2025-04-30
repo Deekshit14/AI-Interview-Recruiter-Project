@@ -12,7 +12,7 @@ function QuestionList({ formData, onCreateLink }) {
 
      const [loading, setLoading] = useState(true);
      const [questionList, setQuestionList] = useState();
-     const {user} = useUser();
+     const { user } = useUser();
      const [saveLoading, setSaveLoading] = useState(false);
 
      useEffect(() => {
@@ -29,7 +29,7 @@ function QuestionList({ formData, onCreateLink }) {
                })
 
                // console.log('result 1', result.data)
-               
+
                console.log('result content', result.data.content);
                const Content = result.data.content;
                const FINAL_CONTENT = Content.replace('```json', '').replace('```', '');
@@ -52,7 +52,7 @@ function QuestionList({ formData, onCreateLink }) {
           const { data, error } = await supabase
                .from('Interviews')
                .insert([
-                    { 
+                    {
                          ...formData,
                          questionList: questionList,
                          userEmail: user?.email,
@@ -60,9 +60,9 @@ function QuestionList({ formData, onCreateLink }) {
                     },
                ])
                .select()
-               setSaveLoading(false);
+          setSaveLoading(false);
 
-               onCreateLink(interview_id);
+          onCreateLink(interview_id);
 
      }
 
@@ -85,8 +85,8 @@ function QuestionList({ formData, onCreateLink }) {
                     </div>
                }
 
-               <div className='flex justify-end mt-10'>
-                    <Button onClick={() => onFinish()} disabled = {saveLoading}>
+               <div className='flex justify-end mt-5'>
+                    <Button onClick={() => onFinish()} disabled = {saveLoading || loading}>
                          {saveLoading && <Loader2 className='animate-spin' />}
                          Create Interview Link & Finish
                     </Button>

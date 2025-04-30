@@ -31,17 +31,17 @@ function LatestInterviewsList() {
 
      return (
           <div className="my-5">
-               <h2 className='font-bold text-2xl'>Previously Created Interviews</h2>
+               <h2 className='font-bold text-2xl text-white'>Previously Created Interviews</h2>
 
                {
                     interviewList?.length === 0
                     &&
                     <div className='p-5 flex flex-col gap-3 items-center mt-5'>
                          <Video className="h-10 w-10 text-primary" />
-                         <h2>You havn't created any interview yet!</h2>
+                         <h2 className= "text-white text-center">You havn't created any interview yet!</h2>
                          {/* <Button>+ Create new Interview</Button> */}
                          <Link href={'/dashboard/create-interview'}>
-                              <Button>+ Create new Interview</Button>
+                              <Button className= "text-white">+ Create new Interview</Button>
                          </Link>
                     </div>
                }
@@ -49,7 +49,7 @@ function LatestInterviewsList() {
                {
                     interviewList 
                     &&
-                    <div className='grid grid-cols-1 sm:grid-cols-2 mt-5 md:grid-cols-2 xl:grid-cols-3 gap-5'>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 mt-5 md:grid-cols-2 xl:grid-cols-3 gap-7'>
                          {interviewList.map((interview, index) => (
                               <InterviewCard interview = {interview} key = {index} />
                          ))}

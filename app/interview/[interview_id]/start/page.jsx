@@ -113,28 +113,28 @@ function StartInterview() {
                          {
                               role: "system",
                               content: `
-             You are an AI voice assistant conducting interviews.
-             Your job is to ask candidates provided interview questions, assess their responses.
-             Begin the conversation with a friendly introduction, setting a relaxed yet professional tone. Example:
-             "Hey there! Welcome to your ` + interviewInfo?.interviewData?.jobPosition + ` interview. Let’s get started with a few questions!"
-             Ask one question at a time and wait for the candidate’s response before proceeding. Keep the questions clear and concise. Below Are the questions ask one by one:
-             Questions: ` + questionList + `
-             If the candidate struggles, offer hints or rephrase the question without giving away the answer. Example:
-             "Need a hint? Think about how React tracks component updates!"
-             Provide brief, encouraging feedback after each answer. Example:
-             "Nice! That’s a solid answer."
-             "Hmm, not quite? Want to try again?" in a professional way
-             Keep the conversation natural and engaging—use casual phrases like "Alright, next up..." or "Let’s tackle a tricky one!"
-             After the completion of all the questions, wrap up the interview by summarizing their performance. Example:
-             "That was great! You handled some tough questions with well. Keep sharpening your skills!" in professional way and If they struggled, offer kind and constructive improvement tips.
-             End on a positive note like:
-             "That wraps it up—awesome work! Keep growing and stay curious!"
-             Key Guidelines:
-             ✅ Be friendly, engaging, and witty ✅
-             ✅ Keep responses short and natural, like a real conversation ✅
-             ✅ Adapt based on the candidate’s confidence level ✅
-             ✅ Ensure the interview remains focused on ` + interviewInfo?.interviewData?.jobPosition + ` ✅
-                     `.trim(),
+   You are an AI voice assistant conducting interviews.
+   Your job is to ask candidates provided interview questions, assess their responses.
+   Begin the conversation with a friendly introduction, setting a relaxed yet professional tone. Example:
+   "Hey there! Welcome to your ` + interviewInfo?.interviewData?.jobPosition + ` interview. Let’s get started with a few questions!" like that ask it in different way
+   Ask one question at a time and wait for the candidate’s response before proceeding. Keep the questions clear and concise. Below Are the questions ask one by one:
+   Questions: ` + questionList + `
+   If the candidate struggles, offer hints or rephrase the question without giving away the answer. Example:
+   "Need a hint? Think about how React tracks component updates!"
+   Provide short, brief, encouraging feedback after each answer in short. Example:
+   "Nice! That’s a solid answer."
+   "Hmm, not quite? Want to try again?" like that in a different way
+   Keep the conversation natural and engaging—use casual phrases like "Alright, next up..." or "Let’s tackle a tricky one!"
+   After the completion of all the questions, wrap up the interview by summarizing their performance. Example:
+   "That was great! You handled some tough questions with well. Keep sharpening your skills!" like that in a  professional way and If they struggled, offer kind and constructive improvement tips.
+   End on a positive note like:
+   "That wraps it up—awesome work! Keep growing and stay curious!" like that in a professional way
+   Key Guidelines:
+   ✅ Be friendly, engaging, and witty ✅
+   ✅ Keep responses short and natural, like a real conversation ✅
+   ✅ Adapt based on the candidate’s confidence level ✅
+   ✅ Ensure the interview remains focused on ` + interviewInfo?.interviewData?.jobPosition + ` ✅
+           `.trim(),
                          },
                     ],
                },
@@ -160,18 +160,6 @@ function StartInterview() {
      //      GenerateFeedback();
      // }
 
-     const stopInterview = async () => {
-          try {
-               await vapi.stop();
-          } catch (error) {
-               console.error("Error stopping interview:", error);
-               // Prevent crashing the app
-          }
-          console.log("Interview has been stopped  d");
-          setAvailable(true)
-          GenerateFeedback();
-     }
-
 
      useEffect(() => {
           const handleMessage = (message) => {
@@ -189,17 +177,17 @@ function StartInterview() {
                console.log("Call has started.");
                // toast('Interview started');
           });
-     
+
           vapi.on("speech-start", () => {
                console.log("Assistant speech has started.");
                setActiveUser(false);
           });
-     
+
           vapi.on("speech-end", () => {
                console.log("Assistant speech has ended.");
                setActiveUser(true);
           });
-     
+
           vapi.on("call-end", () => {
                console.log("Call has ended.");
                // toast('Interview ended');
@@ -215,6 +203,19 @@ function StartInterview() {
           };
 
      }, []);
+
+
+     const stopInterview = async () => {
+          try {
+               await vapi.stop();
+          } catch (error) {
+               console.error("Error stopping interview:", error);
+               // Prevent crashing the app
+          }
+          console.log("Interview has been stopped");
+          setAvailable(true)
+          GenerateFeedback();
+     }
 
      const jobPosition = interviewInfo?.interviewData?.jobPosition
      const jobDescription = interviewInfo?.interviewData?.jobDescription
@@ -264,10 +265,10 @@ function StartInterview() {
 
 
      return (
-          <div className='px-5 sm:px-12 lg:px-48 xl:px-56'>
-               <h2 className='font-bold text-xl flex justify-between mt-2 sm:mt-4'>
+          <div className='px-5 sm:px-12 lg:px-48 xl:px-56 pb-15'>
+               <h2 className='font-bold text-xl flex justify-between mt-2 sm:mt-4 text-white'>
                     AI Interview Session
-                    <span className='flex gap-2 items-center'>
+                    <span className='flex gap-2 items-center text-blue-600'>
                          <Timer />
                          {/* 00:00:00 */}
                          {/* <TimerComponenet start = {true} /> */}
@@ -275,7 +276,7 @@ function StartInterview() {
                </h2>
 
                <div className='grid grid-cols-1 sm:grid-cols-2 gap-7 mt-5'>
-                    <div className='bg-gray-700 h-[200px] sm:h-[400px] rounded-lg border flex flex-col gap-3 items-center justify-center'>
+                    <div className='bg-gray-400 h-[200px] sm:h-[400px] rounded-lg border flex flex-col gap-3 items-center justify-center'>
                          <div className='relative'>
                               {
                                    !activeUser && <span className='absolute inset-0 rounded-full bg-blue-500 opacity-75 animate-ping' />
@@ -286,7 +287,7 @@ function StartInterview() {
                          </div>
                          <h2 className='font-medium text-white'>AI Recruiter</h2>
                     </div>
-                    <div className='bg-gray-700 h-[200px] sm:h-[400px] rounded-lg border flex flex-col gap-3 items-center justify-center'>
+                    <div className='bg-[#979b9a] h-[200px] sm:h-[400px] rounded-lg border flex flex-col gap-3 items-center justify-center'>
                          <div className='relative'>
                               {
                                    activeUser && <span className='absolute inset-0 rounded-full bg-blue-500 opacity-75 animate-ping' />
@@ -310,6 +311,7 @@ function StartInterview() {
                     }
                     {/* </AlertConfirmation> */}
                </div>
+
                <h2 className='text-sm text-gray-400 text-center mt-3'>Interview in Progress...</h2>
           </div>
      )

@@ -7,7 +7,9 @@ import DashboardProvider from './provider'
 
 function DashboardLayout({ children }) {     
      return (
-          <div className = "bg-secondary">
+          // <div className = "bg-secondary">
+          // <div className = "bg-[#152c57]">
+          <div className = "bg-[#1d396e]">
                <DashboardProvider>
                     <div>
                          {children}     

@@ -210,12 +210,23 @@ function Sidebar({
                          className
                     )}
                     {...props}>
-                    <div
+                    {/* <div
                          data-sidebar="sidebar"
                          data-slot="sidebar-inner"
                          className="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm">
                          {children}
+                    </div> */}
+                    <div
+                         data-sidebar="sidebar"
+                         data-slot="sidebar-inner"
+                         className={cn(
+                              "bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm",
+                              className // <-- apply here!
+                         )}
+                    >
+                         {children}
                     </div>
+
                </div>
           </div>)
      );
@@ -241,7 +252,7 @@ function SidebarTrigger({
                }}
                {...props}>
                {/* <PanelLeftIcon /> */}
-               <Menu className="w-6 h-6 !w-6 !h-6" />
+               <Menu className="w-6 h-6 !w-6 !h-6 text-white" />
                <span className="sr-only">Toggle Sidebar</span>
           </Button>)
      );

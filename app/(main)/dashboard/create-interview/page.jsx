@@ -41,10 +41,10 @@ function CreateInterview() {
 
 
      return (
-          <div className = "mt-10 sm:px-10 md:px-24 lg:px-24 xl:px-56">
+          <div className = "mt-10 sm:px-10 md:px-24 lg:px-24 xl:px-40">
                <div className = "flex gap-5 items-center">
-                    <ArrowLeft onClick = {() => router.back()} className='cursor-pointer' />
-                    <h2 className = "font-bold text-xl mt-5 sm:text-2xl">Create new Interview</h2>
+                    <ArrowLeft onClick = {() => router.back()} className='cursor-pointer text-white' />
+                    <h2 className = "font-bold text-xl mt-5 sm:text-2xl text-white">Create new Interview</h2>
                </div>
                <Progress value = {step * 33.33} className='my-5' />
                {

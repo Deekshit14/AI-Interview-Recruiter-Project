@@ -80,7 +80,7 @@ function Interview() {
      return (
           <div className='px-3 sm:px-10 md:px-28 lg:px-48 xl:px-64 mt-7'>
                {/* <InterviewHeader /> */}
-               <div className="flex flex-col items-center justify-center border rounded-lg bg-white p-7 lg:px-32 xl:px-52 pb-20">
+               <div className="flex flex-col items-center justify-center border rounded-lg bg-[#e2e2ff] p-7 lg:px-32 xl:px-52 pb-20">
                     <Image src={'/logo4.svg'} alt="logo" width={200} height={100}
                          className='w-[140px]'
                     />
@@ -98,7 +98,7 @@ function Interview() {
 
                     <div className='w-full mt-3'>
                          <h2>Enter your name</h2>
-                         <Input placeholder='e.g. Deekshit' onChange={(event) => setUserName(event.target.value)} />
+                         <Input className="bg-white mt-1" placeholder='e.g. Deekshit' onChange={(event) => setUserName(event.target.value)} />
                     </div>
 
                     {/* <div className='w-full mt-3'>
@@ -107,7 +107,7 @@ function Interview() {
                          onChange={(event) => setUserEmail(event.target.value)} />
                     </div> */}
 
-                    <div className='p-3 bg-blue-100 flex gap-4 rounded-lg mt-7'>
+                    <div className='sm:p-3 bg-blue-100 flex gap-4 rounded-lg mt-7'>
                          <Info className='text-primary' />
                          <div>
                               <h2 className='font-bold'>Before you begin</h2>

@@ -32,7 +32,7 @@ function CandidateFeedbackDialog({ candidate }) {
      return (
           <Dialog>
                <DialogTrigger asChild>
-                    <Button variant='outline' className='text-primary'>View Report</Button>
+                    <Button variant='outline' className=' text-white bg-blue-500 hover:bg-blue-400'>View Report</Button>
                </DialogTrigger>
                <DialogContent className = "max-h-[90vh] overflow-y-auto">
                     <DialogHeader>

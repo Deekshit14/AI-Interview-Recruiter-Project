@@ -35,10 +35,10 @@ function FormContainer( { onHandleInputChange, GoToNext } ) {
      }
 
      return (
-          <div className='p-5 bg-white rounded-xl'>
+          <div className='p-5 bg-secondary rounded-xl'>
                <div>
                     <h2 className='text-sm font-medium'>Job Position</h2>
-                    <Input placeholder="e.g. Full Stack Developer" className='mt-2' 
+                    <Input placeholder="e.g. Full Stack Developer" className='mt-2' maxLength={26}
                          onChange = {(event) => onHandleInputChange('jobPosition', event.target.value)}
                     />
                </div>

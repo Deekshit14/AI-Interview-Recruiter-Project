@@ -29,7 +29,7 @@ function InterviewCard({ interview, viewDetail = false }) {
 
      return (
 
-          <div className='p-5 bg-white rounded-lg border'>
+          <div className='p-5 bg-blue-50 rounded-2xl border'>
                <div className='flex items-center justify-between'>
                     {/* <div className='h-[40px] w-[40px] bg-green-500 rounded-full'> */}
                     <div>
@@ -50,7 +50,7 @@ function InterviewCard({ interview, viewDetail = false }) {
                          <div className='flex flex-col sm:flex-row gap-3 w-full mt-5 min-w-0'>
                               <Button
                                    variant='outline'
-                                   className='flex-1 flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap text-ellipsis'
+                                   className='flex-1 flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap text-ellipsis bg-blue-50 hover:bg-blue-100'
                                    onClick={copyLink}
                               >
                                    <Copy className="w-4 h-4" />

@@ -49,8 +49,8 @@ function InterviewLink({ interview_id, formData }) {
                <Image src={'/check.webp'} alt='check' width={200} height={200}
                     className='w-[50px] h-[50px]'
                />
-               <h2 className="font-bold text-lg mt-4">Your AI Interview is Ready!</h2>
-               <p className='mt-3'>Share this link with your candidates to start the interview process</p>
+               <h2 className="font-bold text-lg mt-4 text-white">Your AI Interview is Ready!</h2>
+               <p className='mt-1 text-white text-center'>Share this link with your candidates to start the interview process</p>
 
                <div className='w-full p-7 mt-6 rounded-lg bg-white'>
                     <div className="flex justify-between items-center">
@@ -58,7 +58,7 @@ function InterviewLink({ interview_id, formData }) {
                          <h2 className='p-1 px-2 text-xs sm:text-sm text-primary bg-blue-50 rounded-2xl'>Valid for 30 days</h2>
                     </div>
                     <div className='mt-3 flex gap-3 items-center'>
-                         <Input defaultValue={GetInterviewUrl()} disabled={true} />
+                         <Input defaultValue={GetInterviewUrl()} disabled={true} className="bg-blue-50" />
                          {/* <Button onClick = {() => onCopyLink()}> <Copy /> Copy link </Button> */}
                          <Button onClick={() => onCopyLink()} className="flex items-center gap-2">
                               <Copy className="w-4 h-4" />
@@ -83,8 +83,8 @@ function InterviewLink({ interview_id, formData }) {
                <div className='mt-7 bg-white p-5 rounded-lg w-full'>
                     <h2 className='font-bold'>Share Via</h2>
                     <div className='flex gap-7 mt-2'>
-                         <Button variant={'outline'} className='' onClick={onSend}> <Mail /> Email</Button>
-                         <Button variant={'outline'} className='' onClick={onWhatsapp}> <MessageCircle /> Whatsapp</Button>
+                         <Button variant={'outline'} className='bg-blue-50' onClick={onSend}> <Mail /> Email</Button>
+                         <Button variant={'outline'} className='bg-blue-50' onClick={onWhatsapp}> <MessageCircle /> Whatsapp</Button>
                     </div>
                </div>
 
