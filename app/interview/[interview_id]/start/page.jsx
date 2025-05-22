@@ -265,7 +265,7 @@ function StartInterview() {
 
 
      return (
-          <div className='px-5 sm:px-12 lg:px-48 xl:px-56 pb-15'>
+          <div className='px-5 sm:px-12 lg:px-48 xl:px-56 min-h-screen'>
                <h2 className='font-bold text-xl flex justify-between mt-2 sm:mt-4 text-white'>
                     AI Interview Session
                     <span className='flex gap-2 items-center text-blue-600'>
@@ -307,7 +307,7 @@ function StartInterview() {
                                    onClick={() => stopInterview()}
                               />
                               :
-                              <Loader2Icon className='animate-spin' />
+                              <Loader2Icon className='animate-spin text-white' />
                     }
                     {/* </AlertConfirmation> */}
                </div>

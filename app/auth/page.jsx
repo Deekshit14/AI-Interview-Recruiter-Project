@@ -24,8 +24,8 @@ function Login() {
      }
 
      return (
-          <div className = 'flex flex-col items-center justify-center h-screen'>
-               <div className = "flex flex-col items-center border rounded-2xl p-8">
+          <div className = 'flex flex-col items-center justify-center h-screen bg-[#1d396e]'>
+               <div className = "flex flex-col items-center sm:border rounded-2xl p-8">
                     <Image src = {'/logo4.svg'} alt = 'logo' 
                          width = {400} 
                          height={100}
@@ -37,8 +37,8 @@ function Login() {
                               height = {400}
                               className = 'w-[400px] h-[250px] rounded-2xl'
                          />
-                         <h2 className = "text-2xl font-bold text-center mt-5">Welcome to AiCruiter</h2>
-                         <p className = "text-gray-500 text-center">Sign in with Google</p>
+                         <h2 className = "text-2xl font-bold text-center mt-5 text-white">Welcome to AiCruiter</h2>
+                         <p className = "text-gray-300 text-center">Sign in with Google</p>
                          <Button className='mt-7 w-full'
                               onClick = {signInWithGoogle}     
                          >

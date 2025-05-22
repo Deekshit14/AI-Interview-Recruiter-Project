@@ -5,7 +5,7 @@ import React from 'react'
 function InterviewDetailContainer({ interviewDetail }) {
      return (
           <div className='p-5 bg-white rounded-lg mt-5'>
-               <h2 className='capitalize font-bold'>{interviewDetail?.jobPosition}</h2>
+               <h2 className='capitalize font-bold text-xl'>{interviewDetail?.jobPosition}</h2>
 
                <div className='mt-4 flex items-center justify-between lg:pr-52'>
                     <div>

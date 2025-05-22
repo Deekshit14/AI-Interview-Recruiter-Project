@@ -28,20 +28,21 @@ function InterviewCard({ interview, viewDetail = false }) {
 
 
      return (
-
-          <div className='p-5 bg-blue-50 rounded-2xl border'>
+          // <div className='p-5 bg-[#051029] rounded-2xl border'>
+          // <div className='p-5 bg-[#081535] rounded-2xl border'>
+          <div className='p-5 bg-[#041030] rounded-2xl border'>
                <div className='flex items-center justify-between'>
                     {/* <div className='h-[40px] w-[40px] bg-green-500 rounded-full'> */}
                     <div>
                          <Image src={'/logo2.png'} alt="logo" width={40} height={40} />
                     </div>
                     {/* </div> */}
-                    <h2 className='text-sm'>{moment(interview?.created_at).format('DD MMM yyy')}</h2>
+                    <h2 className='text-sm text-white'>{moment(interview?.created_at).format('DD MMM yyy')}</h2>
                </div>
-               <h2 className='mt-3 capitalize font-bold text-md sm:text-lg'>{interview?.jobPosition}</h2>
-               <h2 className='mt-2 flex justify-between text-gray-500'>
+               <h2 className='mt-3 capitalize font-bold text-md sm:text-lg text-gray-300'>{interview?.jobPosition}</h2>
+               <h2 className='mt-2 flex justify-between text-gray-400'>
                     {interview?.duration}
-                    <span className='text-green-700'>{interview['interview-feedback']?.length} Candidates</span>
+                    <span className='text-blue-700'>{interview['interview-feedback']?.length} Candidates</span>
                </h2>
 
                {

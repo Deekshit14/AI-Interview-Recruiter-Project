@@ -30,7 +30,7 @@ function LatestInterviewsList() {
 
 
      return (
-          <div className="my-5">
+          <div className="my-14">
                <h2 className='font-bold text-2xl text-white'>Previously Created Interviews</h2>
 
                {

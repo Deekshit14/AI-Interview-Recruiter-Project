@@ -79,7 +79,7 @@ Ensure the questions match the tone and structure of a real-life {{type}} interv
 format: interviewQuestions=[
 {
   question:'',
-  type: 'Technical/Behavioral/Experience/Problem Solving/Leadership'
+  type: {{type}}
 },{
 ...
 }]
@@ -117,7 +117,7 @@ Based on the above interview conversation between the assistant and the user for
 
 Instructions:
 - Cross-check the total number of questions in {{questionList}} with the number of questions actually asked and answered in the above conversation.
-- If there is a significant mismatch or only a portion of the questions are addressed in the conversation compareded to the questionsList provided, assume the user ended the call early or the interview was incomplete and provide extremely low rating and feedback.
+- If there is a significant mismatch or only a portion of the questions are addressed in the conversation compareded to the {{questionList}} provided, assume the user ended the call early or the interview was incomplete and provide extremely low rating like below 3 out of 10 in all skills and feedback.
 - DO NOT rate the user's performance based solely on the few questions attempted. Instead, rate their overall performance as incomplete and assign lower ratings accordingly in all skill areas. Especially if user ended call early rate them extremely low in all skills.
 - Provide specific feedback for any questions that were skipped or unclearly answered.
 - Ratings should reflect the performance expected in a complete and thorough interview process.
@@ -139,10 +139,10 @@ Give me response in JSON format like below:
 {  
   feedback:{  
     rating:{  
-      techicalSkills: (rating out of 10),  
+      techicalSkills: (rating out of 10 based on {{jobPosition}} tech skills),  
       communication: (rating out of 10),  
-      problemSolving: (rating out of 10),  
-      experince: (rating out of 10)  
+      problemSolving: (rating out of 10 based on {{jobPosition}} problem solving skills),  
+      experince: (rating out of 10 based on {{jobPosition}} experience of knowledge)  
     },  
     summary:<in 300 to 350 words>,  
     Recommendation: (yes/no),  

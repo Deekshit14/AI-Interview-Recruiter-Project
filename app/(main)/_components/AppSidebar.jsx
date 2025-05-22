@@ -37,7 +37,8 @@ export function AppSidebar() {
 
      return (
 
-          <Sidebar className="bg-[#14397a] text-white">
+          // <Sidebar className="bg-[#14397a] text-white">
+          <Sidebar className="bg-[#041933] text-white">
                <SidebarHeader className="flex items-center mt-5">
                     <Image src={'/logo4.svg'} alt="logo" width={200} height={100}
                          className="w-[150px]"
@@ -52,9 +53,9 @@ export function AppSidebar() {
                          <SidebarContent>
                               <SidebarMenu>
                                    {SideBarOptions.map((option, index) => (
-                                        <SidebarMenuItem key={index} className="p-1" >
+                                        <SidebarMenuItem key={index} className="p-1 text-white" >
                                              <SidebarMenuButton asChild
-                                                  className={`p-5 ${path === option.path && 'bg-blue-100'}`}
+                                                  className={`p-5 bg-[#102641] ${path === option.path && 'bg-blue-100'}`}
                                              >
                                                   <Link href={option.path}>
                                                        <option.icon

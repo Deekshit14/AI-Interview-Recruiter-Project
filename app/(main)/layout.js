@@ -9,7 +9,8 @@ function DashboardLayout({ children }) {
      return (
           // <div className = "bg-secondary">
           // <div className = "bg-[#152c57]">
-          <div className = "bg-[#1d396e]">
+          // <div className = "bg-[#1d396e]">
+          <div className = "bg-[#041933]">
                <DashboardProvider>
                     <div>
                          {children}     
