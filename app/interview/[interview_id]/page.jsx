@@ -86,7 +86,7 @@ function Interview() {
                     />
                     <h2 className='mt-1 text-gray-400 text-center'>AI-Powered Interview Platform</h2>
 
-                    <Image src={'/interview.png'} alt='interview' width={500} height={500}
+                    <Image src={'/Interview.png'} alt='interview' width={500} height={500}
                          className='w-[280px] my-6'
                     />
 
