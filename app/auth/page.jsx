@@ -14,8 +14,8 @@ function Login() {
           const {error} = await supabase.auth.signInWithOAuth({
                provider: 'google',
                options: {
-                    // redirectTo: `${location.origin}/dashboard` // redirect to /dashboard after login
-                    redirectTo: `${process.env.NEXT_PUBLIC_HOST_URL}/dashboard`
+                    redirectTo: `${location.origin}/dashboard` // redirect to /dashboard after login
+                    // redirectTo: `${process.env.NEXT_PUBLIC_HOST_URL_WEB}/dashboard`
                }
           })
 
@@ -25,7 +25,7 @@ function Login() {
      }
 
      return (
-          <div className = 'flex flex-col items-center justify-center h-screen bg-[#1d396e]'>
+          <div className = 'flex flex-col items-center justify-center h-screen bg-[#041933]'>
                <div className = "flex flex-col items-center sm:border rounded-2xl p-8">
                     <Image src = {'/logo4.svg'} alt = 'logo' 
                          width = {400} 

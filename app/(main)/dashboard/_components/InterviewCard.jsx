@@ -42,7 +42,7 @@ function InterviewCard({ interview, viewDetail = false }) {
                <h2 className='mt-3 capitalize font-bold text-md sm:text-lg text-gray-300'>{interview?.jobPosition}</h2>
                <h2 className='mt-2 flex justify-between text-gray-400'>
                     {interview?.duration}
-                    <span className='text-blue-700'>{interview['interview-feedback']?.length} Candidates</span>
+                    <span className='text-[#0377FC]'>{interview['interview-feedback']?.length} Candidates</span>
                </h2>
 
                {
@@ -77,31 +77,3 @@ function InterviewCard({ interview, viewDetail = false }) {
 }
 
 export default InterviewCard;
-
-
-
-
-
-
-// <div className='p-5 bg-white rounded-lg border'>
-//      <div className='flex items-center justify-between'>
-//           <div className='h-[40px] w-[40px] bg-primary rounded-full'></div>
-//           <h2 className='text-sm'>{moment(interview?.created_at).format('DD MMM yyy')}</h2>
-//      </div>
-//      <h2 className='mt-3 font-bold text-lg'>{interview?.jobPosition}</h2>
-//      <h2 className='mt-2'>{interview?.duration}</h2>
-//      {/* <div className='flex gap-3 w-full mt-5'>
-//           <Button variant='outline'> <Copy /> Copy Link</Button>
-//           <Button > <Send /> Send</Button>
-//      </div> */}
-//      <div className='flex gap-3 w-full mt-5'>
-//           <Button variant='outline' className='w-full flex items-center justify-center gap-2'>
-//                <Copy className="w-4 h-4" />
-//                Copy Link
-//           </Button>
-//           <Button className='w-full flex items-center justify-center gap-2'>
-//                <Send className="w-4 h-4" />
-//                Send
-//           </Button>
-//      </div>
-// </div>

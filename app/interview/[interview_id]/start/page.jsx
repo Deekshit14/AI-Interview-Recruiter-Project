@@ -266,7 +266,7 @@ function StartInterview() {
 
      return (
           <div className='px-5 sm:px-12 lg:px-48 xl:px-56 min-h-screen'>
-               <h2 className='font-bold text-xl flex justify-between mt-2 sm:mt-4 text-white'>
+               <h2 className='font-bold text-xl flex justify-between mt-2 sm:mt-10 text-white'>
                     AI Interview Session
                     <span className='flex gap-2 items-center text-blue-600'>
                          <Timer />
@@ -276,7 +276,7 @@ function StartInterview() {
                </h2>
 
                <div className='grid grid-cols-1 sm:grid-cols-2 gap-7 mt-5'>
-                    <div className='bg-gray-400 h-[200px] sm:h-[400px] rounded-lg border flex flex-col gap-3 items-center justify-center'>
+                    <div className='bg-[#042c55] h-[200px] sm:h-[400px] rounded-lg border flex flex-col gap-3 items-center justify-center'>
                          <div className='relative'>
                               {
                                    !activeUser && <span className='absolute inset-0 rounded-full bg-blue-500 opacity-75 animate-ping' />
@@ -287,7 +287,7 @@ function StartInterview() {
                          </div>
                          <h2 className='font-medium text-white'>AI Recruiter</h2>
                     </div>
-                    <div className='bg-[#979b9a] h-[200px] sm:h-[400px] rounded-lg border flex flex-col gap-3 items-center justify-center'>
+                    <div className='bg-[#042c55] h-[200px] sm:h-[400px] rounded-lg border flex flex-col gap-3 items-center justify-center'>
                          <div className='relative'>
                               {
                                    activeUser && <span className='absolute inset-0 rounded-full bg-blue-500 opacity-75 animate-ping' />
