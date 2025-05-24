@@ -15,7 +15,6 @@ function Login() {
                provider: 'google',
                options: {
                     redirectTo: `${location.origin}/dashboard` // redirect to /dashboard after login
-                    // redirectTo: `${process.env.NEXT_PUBLIC_HOST_URL_WEB}/dashboard`
                }
           })
 
